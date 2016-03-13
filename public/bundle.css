@@ -87,6 +87,7 @@
   -ms-flex-order: 3;
   order: 3;
   top: 0;
+  display: block;
 }
 
 .fl-input-bar::after,
@@ -118,13 +119,5 @@
 .fl-input-bar,
 .fl-error-msg {
   position: relative;
-  display: block;
   width: inherit;
-}
-
-.fl-error-msg {
-  -webkit-order: 4;
-  -ms-flex-order: 4;
-  order: 4;
-  top: 5px;
 }

@@ -18,7 +18,7 @@ export class FloatingLabel extends React.Component {
   }
 
   render () {
-    const {autoComplete, id, isDisabled, placeholder, type, errorMsg} = this.props;
+    const {autoComplete, id, isDisabled, placeholder, type} = this.props;
     const {hasValue} = this.state;
     const inputClasses = classNames('fl-input', {'fl-valid': hasValue});
     return(
@@ -26,7 +26,6 @@ export class FloatingLabel extends React.Component {
         <input autoComplete={autoComplete} className={inputClasses} disabled={isDisabled} id={id} onBlur={this.onBlur.bind(this)} type={type}/>
         <label className='fl-input-label' htmlFor={id}>{placeholder}</label>
         <span className='fl-input-bar'></span>
-        <span className='fl-error-msg'>{errorMsg}</span>
       </div>
     );
   }
@@ -36,4 +35,4 @@ module.exports = FloatingLabel;
 
 //TODO: remove below lines
 const target = document.getElementById('content');
-React.render(<FloatingLabel autoComplete={false} errorMsg="Enter the date" id='date' isDisabled={true} placeholder='date' type='date'/>, target);
+React.render(<FloatingLabel autoComplete={false} id='date' isDisabled={false} placeholder='date' type='date'/>, target);
