@@ -9,6 +9,10 @@
   position: relative;
 }
 
+.fl-input-container input:not(:focus):not(.fl-valid) {
+  color: transparent;
+}
+
 .fl-input-container input,
 .fl-input-container label {
   font-family: 'Roboto', sans-serif;
@@ -55,9 +59,9 @@
 .fl-input-container input.fl-valid + label {
   opacity: 1;
   color: #3949AB;
-  -webkit-transform: scale(0.75) translate3d(0, 5px, 0);
-  -moz-transform: scale(0.75) translate3d(0, 5px, 0);
-  transform: scale(0.75) translate3d(0, 5px, 0);
+  -webkit-transform: scale(0.8) translate3d(0, 5px, 0);
+  -moz-transform: scale(0.8) translate3d(0, 5px, 0);
+  transform: scale(0.8) translate3d(0, 5px, 0);
 }
 
 .fl-input:active,
@@ -79,9 +83,6 @@
 }
 
 .fl-input-bar {
-  position: relative;
-  display: block;
-  width: inherit;
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;
@@ -112,4 +113,18 @@
 .fl-input:focus ~ .fl-input-bar::after,
 .fl-input:focus ~ .fl-input-bar::before {
   width: 50%;
+}
+
+.fl-input-bar,
+.fl-error-msg {
+  position: relative;
+  display: block;
+  width: inherit;
+}
+
+.fl-error-msg {
+  -webkit-order: 4;
+  -ms-flex-order: 4;
+  order: 4;
+  top: 5px;
 }

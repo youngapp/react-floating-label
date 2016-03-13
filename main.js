@@ -4,29 +4,29 @@ import classNames from 'classnames'
 export class FloatingLabel extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {valid: false};
+    this.state = {hasValue: false};
   }
 
   onBlur(event) {
     var inputValue = event.currentTarget.value;
     if (inputValue) {
-      this.setState({ valid: true });
+      this.setState({hasValue: true});
     }
     else {
-      this.setState({ valid: false });
+      this.setState({hasValue: false});
     }
   }
 
   render () {
-    const {id, placeholder, type} = this.props;
-    const {valid} = this.state;
-    const inputClasses = classNames('fl-input', { 'fl-valid': valid });
-
+    const {autoComplete, id, isDisabled, placeholder, type, errorMsg} = this.props;
+    const {hasValue} = this.state;
+    const inputClasses = classNames('fl-input', {'fl-valid': hasValue});
     return(
       <div className='fl-input-container'>
-        <input autoComplete='off' className={inputClasses} text={type} id={id} onBlur={this.onBlur.bind(this)} />
+        <input autoComplete={autoComplete} className={inputClasses} disabled={isDisabled} id={id} onBlur={this.onBlur.bind(this)} type={type}/>
         <label className='fl-input-label' htmlFor={id}>{placeholder}</label>
         <span className='fl-input-bar'></span>
+        <span className='fl-error-msg'>{errorMsg}</span>
       </div>
     );
   }
@@ -34,6 +34,6 @@ export class FloatingLabel extends React.Component {
 
 module.exports = FloatingLabel;
 
-//TODO: remove beloe lines later
+//TODO: remove below lines
 const target = document.getElementById('content');
-React.render(<FloatingLabel id='name' placeholder='name' type='input' />, target);
+React.render(<FloatingLabel autoComplete={false} errorMsg="Enter the date" id='date' isDisabled={true} placeholder='date' type='date'/>, target);
