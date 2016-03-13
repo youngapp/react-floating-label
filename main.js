@@ -8,13 +8,7 @@ export class FloatingLabel extends React.Component {
   }
 
   onBlur(event) {
-    var inputValue = event.currentTarget.value;
-    if (inputValue) {
-      this.setState({hasValue: true});
-    }
-    else {
-      this.setState({hasValue: false});
-    }
+     this.setState({hasValue: Boolean(event.currentTarget.value)});
   }
 
   render () {
