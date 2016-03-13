@@ -23,12 +23,10 @@ export class FloatingLabel extends React.Component {
     const inputClasses = classNames('fl-input', { 'fl-valid': valid });
 
     return(
-      <div>
-        <div className='fl-input-container'>
-          <input autoComplete='off' className={inputClasses} text={type} id={id} onBlur={this.onBlur.bind(this)} />
-          <label className='fl-input-label' htmlFor={id}>{placeholder}</label>
-          <span className='fl-input-bar'></span>
-        </div>
+      <div className='fl-input-container'>
+        <input autoComplete='off' className={inputClasses} text={type} id={id} onBlur={this.onBlur.bind(this)} />
+        <label className='fl-input-label' htmlFor={id}>{placeholder}</label>
+        <span className='fl-input-bar'></span>
       </div>
     );
   }
