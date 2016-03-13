@@ -4,7 +4,13 @@
   "description": "WIP floating label",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-js": "NODE_ENV=production browserify main.js | uglifyjs -cm > public/bundle.js",
+    "build-css": "cat master.css > public/bundle.css",
+    "build": "npm run build-js && npm run build-css",
+    "start": "ecstatic -p 8000 public",
+    "watch-js": "watchify main.js -o public/bundle.js -dv",
+    "watch-css": "catw master.css -o public/bundle.css -v",
+    "watch": "npm run watch-js & npm run watch-css"
   },
   "repository": {
     "type": "git",
@@ -21,14 +27,11 @@
       "babelify"
     ]
   },
-  "scripts": {
-    "build": "NODE_ENV=production browserify main.js | uglifyjs -cm > public/bundle.js",
-    "start": "ecstatic -p 8000 public",
-    "watch": "watchify main.js -o public/bundle.js -dv"
-  },
   "dependencies": {
     "babelify": "^6.1.3",
     "browserify": "^10.2.6",
+    "catw": "~0.0.1",
+    "classnames": "^2.2.3",
     "ecstatic": "~0.8.0",
     "react": "~0.13.3",
     "uglify-js": "^2.4.24",

@@ -1,0 +1,115 @@
+.fl-input-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 25px;
+  position: relative;
+}
+
+.fl-input-container input,
+.fl-input-container label {
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: none;
+}
+
+.fl-input-container input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0;
+  font-size: 100%;
+  line-height: 25px;
+}
+
+.fl-input-label {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  color: #999;
+  opacity: 0.75;
+  pointer-events: none;
+  text-transform: capitalize;
+  transition: 200ms ease all;
+  -moz-transition: 200ms ease all;
+  -webkit-transition: 200ms ease all;
+  font-weight: normal;
+  padding-left: 2px;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1) translate3d(0, 22px, 0);
+  -moz-transform: scale(1) translate3d(0, 22px, 0);
+  transform: scale(1) translate3d(0, 22px, 0);
+}
+
+.fl-input-container input:focus + label,
+.fl-input-container input.fl-valid + label {
+  opacity: 1;
+  color: #3949AB;
+  -webkit-transform: scale(0.75) translate3d(0, 5px, 0);
+  -moz-transform: scale(0.75) translate3d(0, 5px, 0);
+  transform: scale(0.75) translate3d(0, 5px, 0);
+}
+
+.fl-input:active,
+.fl-input:focus,
+.fl-input-label {
+  outline: 0;
+}
+
+.fl-input {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  color: #000;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.fl-input-bar {
+  position: relative;
+  display: block;
+  width: inherit;
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+  top: 0;
+}
+
+.fl-input-bar::after,
+.fl-input-bar::before {
+  width: 0;
+  height: 2px;
+  content: "";
+  bottom: 0;
+  position: absolute;
+  transition: 200ms ease all;
+  -moz-transition: 200ms ease all;
+  -webkit-transition: 200ms ease all;
+  background: #3949AB;
+}
+
+.fl-input-bar::before {
+  left: 50%;
+}
+
+.fl-input-bar::after {
+  right: 50%;
+}
+
+.fl-input:focus ~ .fl-input-bar::after,
+.fl-input:focus ~ .fl-input-bar::before {
+  width: 50%;
+}
