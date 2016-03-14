@@ -3,6 +3,6 @@ WIP
 
 #### TODO's
 
-  - [ ] - Add pattern attribute to validate the input from user
+  - [x] - Add pattern attribute to validate the input from user
 
-  - [ ] - Add hint msg error
+  - [x] - Add error message
