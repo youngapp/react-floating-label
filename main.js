@@ -13,7 +13,7 @@ export class FloatingLabel extends React.Component {
     isDisabled: PropTypes.bool
   };
   _bind(...methods) {
-    methods.map((method)=>this[method]=this[method].bind(this));
+    methods.map(method=>this[method]=this[method].bind(this));
   }
   constructor (props) {
     super(props)
@@ -39,8 +39,6 @@ export class FloatingLabel extends React.Component {
 
     const inputClasses = classNames('fl-input', {'fl-valid': hasValue && !hasError}, {'fl-invalid': hasValue && hasError});
     const errMsgClasses = classNames({'fl-error-msg': errorMsg}, {'fl-error-show': (hasError && hasValue) && (errorMsg && pattern)});
-    
-    console.log(inputClasses);
 
     return(
       <div className='fl-input-container'>
