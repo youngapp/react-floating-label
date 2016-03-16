@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react/addons';
+import React, {PropTypes} from 'react';
+import ReactDOM from  'react-dom';
 import classNames from 'classnames'
 
 export class FloatingLabel extends React.Component {
@@ -11,10 +12,13 @@ export class FloatingLabel extends React.Component {
     id: PropTypes.string.isRequired,
     isDisabled: PropTypes.bool
   };
-
+  _bind(...methods) {
+    methods.map((method)=>this[method]=this[method].bind(this));
+  }
   constructor (props) {
     super(props)
     this.state = {hasValue: false, hasError: false};
+    this._bind('onBlur','onChange');
   }
 
   onBlur(event) {
@@ -35,6 +39,8 @@ export class FloatingLabel extends React.Component {
 
     const inputClasses = classNames('fl-input', {'fl-valid': hasValue && !hasError}, {'fl-invalid': hasValue && hasError});
     const errMsgClasses = classNames({'fl-error-msg': errorMsg}, {'fl-error-show': (hasError && hasValue) && (errorMsg && pattern)});
+    
+    console.log(inputClasses);
 
     return(
       <div className='fl-input-container'>
@@ -43,8 +49,8 @@ export class FloatingLabel extends React.Component {
           className={inputClasses}
           disabled={isDisabled}
           id={id}
-          onBlur={this.onBlur.bind(this)}
-          onChange={pattern ? this.onChange.bind(this) : null}
+          onBlur={this.onBlur}
+          onChange={pattern ? this.onChange : null}
           type={type}/>
         <label className='fl-input-label' htmlFor={id}>{placeholder}</label>
         <span className='fl-input-bar'></span>
@@ -66,7 +72,7 @@ module.exports = FloatingLabel;
 
 //TODO: remove below lines
 const target = document.getElementById('content');
-React.render(<FloatingLabel
+ReactDOM.render(<FloatingLabel
   errorMsg='Full name can contain only the alphabets and space'
   pattern={/^[a-z\s]+$/i}
   />,
