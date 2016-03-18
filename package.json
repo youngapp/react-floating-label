@@ -1,7 +1,7 @@
 {
   "name": "react-floating-label",
   "version": "0.0.0",
-  "description": "WIP floating label",
+  "description": "A material design styled floating label input using react.js",
   "main": "main.js",
   "scripts": {
     "build-js": "NODE_ENV=production rm -rf public && mkdir public && browserify app.js | uglifyjs -cm > public/bundle.js",
@@ -16,7 +16,14 @@
     "type": "git",
     "url": "git+https://github.com/code-kotis/react-floating-label.git"
   },
-  "author": "",
+  "author": "Gokulakrishnan Kalaikovan <krishnangokul9@gmail.com> (http://gokulkrishh.github.io/about/)",
+  "contributors": [
+    {
+      "name" : "hemanth.hm",
+      "email" : "hemanth.hm@gmail.com",
+      "url" : "http://h3manth.com"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/code-kotis/react-floating-label/issues"
