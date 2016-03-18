@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import classNames from 'classnames';
 
-export class FloatingLabel extends React.Component {
+export default class FloatingLabel extends React.Component {
   static propTypes: {
     autoComplete: PropTypes.bool,
     errorMsg: PropTypes.string,
@@ -61,5 +61,3 @@ FloatingLabel.defaultProps = {
   id: 'text-box',
   placeholder: 'name'
 };
-
-module.exports = FloatingLabel;

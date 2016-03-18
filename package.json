@@ -4,11 +4,11 @@
   "description": "WIP floating label",
   "main": "main.js",
   "scripts": {
-    "build-js": "NODE_ENV=production rm -rf public && mkdir public && browserify main.js | uglifyjs -cm > public/bundle.js",
+    "build-js": "NODE_ENV=production rm -rf public && mkdir public && browserify app.js | uglifyjs -cm > public/bundle.js",
     "build-css": "cat master.css > public/bundle.css",
     "build": "npm run build-js && npm run build-css",
     "start": "ecstatic -p 8000 public",
-    "watch-js": "watchify main.js -o public/bundle.js -dv",
+    "watch-js": "watchify app.js -o public/bundle.js -dv",
     "watch-css": "catw master.css -o public/bundle.css -v",
     "watch": "npm run watch-js & npm run watch-css"
   },
