@@ -63,11 +63,3 @@ FloatingLabel.defaultProps = {
 };
 
 module.exports = FloatingLabel;
-
-//TODO: remove below lines
-const target = document.getElementById('content');
-React.render(<FloatingLabel
-  errorMsg='Full name can contain only the alphabets and space'
-  pattern={/^[a-z\s]+$/i}
-  />,
-target);
