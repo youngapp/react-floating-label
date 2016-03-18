@@ -1,5 +1,6 @@
-import React, {PropTypes} from 'react/addons';
-import classNames from 'classnames'
+import React from 'react';
+import {PropTypes} from 'react/addons';
+import classNames from 'classnames';
 
 export class FloatingLabel extends React.Component {
   static propTypes: {
