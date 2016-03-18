@@ -1,6 +1,6 @@
 {
   "name": "react-floating-label",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A material design styled floating label input using react.js",
   "main": "main.js",
   "scripts": {
@@ -19,9 +19,9 @@
   "author": "Gokulakrishnan Kalaikovan <krishnangokul9@gmail.com> (http://gokulkrishh.github.io/about/)",
   "contributors": [
     {
-      "name" : "hemanth.hm",
-      "email" : "hemanth.hm@gmail.com",
-      "url" : "http://h3manth.com"
+      "name": "hemanth.hm",
+      "email": "hemanth.hm@gmail.com",
+      "url": "http://h3manth.com"
     }
   ],
   "license": "ISC",
