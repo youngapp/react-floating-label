@@ -1,6 +1,8 @@
 # react-floating-label
 > Floating label input.
 
+Checkout the [DEMO](http://code-kotis.github.io/react-floating-label/)
+
 __Install it:__
 
 ```sh
