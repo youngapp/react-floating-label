@@ -2,7 +2,8 @@ import React, {PropTypes} from 'react';
 import ReactDOM from  'react-dom';
 import classNames from 'classnames'
 
-export class FloatingLabel extends React.Component {
+
+export default class FloatingLabel extends React.Component {
   static propTypes: {
     autoComplete: PropTypes.bool,
     errorMsg: PropTypes.string,
@@ -66,6 +67,7 @@ FloatingLabel.defaultProps = {
   placeholder: 'name'
 };
 
+
 module.exports = FloatingLabel;
 
 //TODO: remove below lines
@@ -75,3 +77,4 @@ ReactDOM.render(<FloatingLabel
   pattern={/^[a-z\s]+$/i}
   />,
 target);
+
