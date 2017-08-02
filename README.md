@@ -30,7 +30,9 @@ placeholder: PropTypes.string.isRequired,
 pattern: PropTypes.any,
 type: PropTypes.string.isRequired,
 id: PropTypes.string.isRequired,
-isDisabled: PropTypes.bool
+isDisabled: PropTypes.bool,
+focusColor: PropTypes.string.isRequired,
+defaultColor: PropTypes.string.isRequired
 ```
 
 __Building and running:__
@@ -54,8 +56,7 @@ available via `npm run-script`:
   watch
     npm run watch-js & npm run watch-css
   ```
-  
+
 __License:__
 
 MIT
-
